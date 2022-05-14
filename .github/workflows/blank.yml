@@ -30,5 +30,11 @@ jobs:
       - name: "List files in the repository"
         run: |
           ls ${{ github.workspace }}
+
+  Sedond-Example-Actions-Job:
+    name: This is a second example GitHub actions job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The following echo command should be executed by second GitHub actions Job"
   
       

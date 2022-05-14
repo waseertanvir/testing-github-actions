@@ -5,9 +5,9 @@ on:
     branches: [main]
     
 jobs: 
-  Example-Actions-Job:
+  Example-Actions-job:
     name: "This is an example GitHub actions job"
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       #Display the event that triggered the workflow
       - run: echo "The job was trigerred by a ${{ github.event_name }} event"

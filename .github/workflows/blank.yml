@@ -1,0 +1,34 @@
+name: "This is my first workflow youhoo!"
+
+on:
+  push: 
+    branches: [main]
+    
+jobs: 
+  Example-Actions-Job:
+    name: "This is an example GitHub actions job"
+    runs on: ubuntu-latest
+    steps:
+      #Display the event that triggered the workflow
+      - run: echo "The job was trigerred by a ${{ github.event_name }} event"
+      
+      #Runner information
+      - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub"
+      
+      #Use action proided by GitHub
+      - name: Check out the repository code
+        uses: actions/checkout@v2
+        
+      - run: echo "The ${{ github.repository }} has been cloned to the runner"
+        
+      - run: echo "Your repository has been copied to the path ${{ github.workspace }} on the runner"
+      
+      - run: echo "Tanvir! you did it"
+      
+      - run: echo "The workflow is now ready to test your code on the runner"
+      
+      - name: "List files in the repository"
+        run: |
+          ls ${{ github.workspace }}
+  
+      
